@@ -42,7 +42,7 @@
         },
         methods: {
             async register() {
-                await this.$axios.post('register',this.form);
+                await this.$axios.post('/auth/register',this.form);
                 this.$auth.login({data: this.form});
                 this.$router.push({name:'index'});
             }

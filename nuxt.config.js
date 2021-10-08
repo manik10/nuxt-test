@@ -24,6 +24,25 @@ export default {
   plugins: [
   ],
 
+  auth: {
+    strategies: {
+      local: {
+        endpoints:{
+          login:{
+            url:'auth/login', method:'post',propertyName:'token'
+          },
+          user: {
+            url:'me', method:'get', propertyName: 'data'
+          },
+          logout: 'me/logout', method: 'get'
+        }
+      }
+    },
+    redirect:{
+      login: 'auth/login',
+      home: '/'
+    }
+  },
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
 
@@ -46,7 +65,11 @@ export default {
     baseURL: "http://127.0.0.1:8000/api"
   },
 
+  /*router: {
+    middleware: ['']
+  },*/
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    extractCSS: true,
   }
 }

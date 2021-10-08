@@ -2,7 +2,6 @@
    <div class="container">
         <b-navbar toggleable="lg" type="light" variant="light">
          <nuxt-link class="navbar-brand" to="/">Home</nuxt-link>
-
         <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
         <b-collapse id="nav-collapse" is-nav>
